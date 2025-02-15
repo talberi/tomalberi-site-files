@@ -1020,8 +1020,8 @@ function setup ( ) {
 	'Number of Grandstands': numberStands,
   })*/
   //canvasMin = Math.floor(min(windowWidth, windowHeight));
-  var canvas = createCanvas(raceTracksCanvas.offsetWidth-1, raceTracksCanvas.offsetHeight-1);
-  canvas.parent('raceTracksCanvas');
+  var canvas = document.getElementById('raceTracksCanvas');;
+  //canvas.parent('raceTracksCanvas');
   canvasMin = min(canvas.width, canvas.height);
   frameRate(30);
   noLoop();
