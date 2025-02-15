@@ -1004,7 +1004,7 @@ function getDistanceFromLine(line,p) {
 }
 
 function setup ( ) {
-  seed = int($fx.rand() * 999999);
+  //seed = int($fx.rand() * 999999);
   /*randomSeed(seed);
 
   // Set features
@@ -1029,7 +1029,7 @@ function setup ( ) {
 
 function draw ( ) {
   pixelDensity(pd);
-  randomSeed(seed);
+  //randomSeed(seed);
 
   // Set features
   trees = Math.floor(random(0,1.99999999));
@@ -1038,11 +1038,6 @@ function draw ( ) {
   getColorSets();
   colorSetIndex = Math.floor(random(0, colorSets.length));
   cName = colorSetNames[colorSetIndex];
-  $fx.features({
-	'Color Set': cName,
-	'Number of Turns': turns,
-	'Number of Grandstands': numberStands,
-  })
   
   // Set some initial values
   //pixelDensity(pd);
