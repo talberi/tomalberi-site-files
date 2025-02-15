@@ -1386,7 +1386,15 @@ keyTyped = function() {
   let resize = 1000;
   let r = false;
   if (key == 's' || key == 'S') {
-	  saveCanvas('Race Tracks - ' + $fx.hash, 'png')
+	  const now = new Date();
+	  const year = now.getFullYear();
+	  const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+	  const day = String(now.getDate()).padStart(2, '0');
+	  const hours = String(now.getHours()).padStart(2, '0');
+	  const minutes = String(now.getMinutes()).padStart(2, '0');
+	  const seconds = String(now.getSeconds()).padStart(2, '0');
+	  const customFormattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+	  saveCanvas('Race Tracks - ' + customFormattedDateTime, 'png')
   } else if(key == '2' ) {
       resize = 2000;
 	  r = true;
