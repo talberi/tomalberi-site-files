@@ -1004,7 +1004,7 @@ function getDistanceFromLine(line,p) {
 }
 
 function setup ( ) {
-  //seed = int($fx.rand() * 999999);
+  seed = int(random() * 999999);
   /*randomSeed(seed);
 
   // Set features
@@ -1019,17 +1019,17 @@ function setup ( ) {
 	'Number of Turns': turns,
 	'Number of Grandstands': numberStands,
   })*/
-  //canvasMin = Math.floor(min(windowWidth, windowHeight));
-  var canvas = createCanvas(raceTracksCanvas.offsetWidth, raceTracksCanvas.offsetHeight);
-  canvas.parent('raceTracksCanvas');
-  canvasMin = min(canvas.width, canvas.height);
+  canvasMin = Math.floor(min(windowWidth, windowHeight));
+  var canvas = createCanvas(canvasMin, canvasMin);
+  //var canvasParent = canvas.parent('raceTracksCanvas');
+  //canvasMin = min(canvas.width, canvas.height);
   frameRate(30);
   noLoop();
 }
 
 function draw ( ) {
   pixelDensity(pd);
-  //randomSeed(seed);
+  randomSeed(seed);
 
   // Set features
   trees = Math.floor(random(0,1.99999999));
@@ -1434,7 +1434,7 @@ function draw ( ) {
   }
 }*/
 
-/*function windowResized() {
+function windowResized() {
   // Reset global variable arrays and other values
   updatePixels();
   turnAngles = new Array( ); 
@@ -1445,4 +1445,4 @@ function draw ( ) {
   pd = 1;
   canvasMin = Math.floor(min(windowWidth, windowHeight));
   resizeCanvas(canvasMin, canvasMin);
-}*/
+}
