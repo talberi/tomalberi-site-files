@@ -1007,7 +1007,7 @@ function setup ( ) {
   seed = int(random() * 999999);
   canvasMin = Math.floor(min(windowWidth, windowHeight));
   var canvas = createCanvas(canvasMin, canvasMin);
-  frameRate(30);
+  frameRate(10);
   noLoop();
 }
 
@@ -1378,7 +1378,7 @@ function draw ( ) {
   noFill( );
   
   // Draw the trees
-  drawTrees(baseColor, color(red( featureColor1), green( featureColor1), blue(featureColor1), 128));
+  setTimeout(drawTrees(baseColor, color(red( featureColor1), green( featureColor1), blue(featureColor1), 128)), 200);
 
 }
 
