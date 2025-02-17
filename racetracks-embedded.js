@@ -911,7 +911,7 @@ function drawTrees(bg,treeColor) {
 	// Check if the pixels around the point are only the background color
 	let clear = true;
 	let d = pixelDensity();
-	let clearance = Math.floor(canvasMin/200);
+	let clearance = Math.floor(canvasMin/100);
 	for (let j = -clearance; j < clearance; j++) {
 		for (let k = -clearance; k < clearance; k++) {
 			let index = 4 * d * ((yPix + j) * d * canvasMin + xPix + k);
