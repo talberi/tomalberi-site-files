@@ -900,7 +900,7 @@ function drawTrees(bg,treeColor) {
   
   // Iterate through all pixels, per treeSpacing value
   loadPixels();
-  for (let i = 0; i < 10000; i += 1) {
+  for (let i = 0; i < 15000; i += 1) {
   
 	// Set a random point
 	let xPixP = random(0, 1) * canvasMin;
@@ -911,7 +911,7 @@ function drawTrees(bg,treeColor) {
 	// Check if the pixels around the point are only the background color
 	let clear = true;
 	let d = pixelDensity();
-	let clearance = Math.floor(canvasMin/50);
+	let clearance = Math.floor(canvasMin/150);
 	for (let j = -clearance; j < clearance; j++) {
 		for (let k = -clearance; k < clearance; k++) {
 			let index = 4 * d * ((yPix + j) * d * canvasMin + xPix + k);
@@ -1378,7 +1378,7 @@ function draw ( ) {
   noFill( );
   
   // Draw the trees
-  setTimeout(drawTrees(baseColor, color(red( featureColor1), green( featureColor1), blue(featureColor1), 128)), 500);
+  drawTrees(baseColor, color(red( featureColor1), green( featureColor1), blue(featureColor1), 128));
 
 }
 
