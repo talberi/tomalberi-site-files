@@ -197,7 +197,6 @@ function getColorSets() {
 
 function setup ( ) {
   seed = int(random() * 999999);
-  randomSeed(seed);
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
   if (cHeight > windowHeight) {
@@ -215,6 +214,10 @@ function setup ( ) {
 
 function draw ( ) {
   randomSeed(seed);
+  numOrbits = Math.floor(random(1, 5.999999)); // Make minimum number of orbits a parameter between 0 and 4?
+  getColorSets();
+  colorSetIndex = Math.floor(random(0, colorSets.length));
+  cName = colorSetNames[colorSetIndex];
   let quadConfig = Math.floor(random(0, 3.999999));
   
   // Choose color set
@@ -222,18 +225,21 @@ function draw ( ) {
   
   // Set colors
   let selectedColors = new Array();
-  for (let i = 0; i < 4; i++) {
-    let index = Math.floor(random(0, 3.9));
-    while (selectedColors.includes(index)) {
-      index = Math.floor(random(0, 3.9));
+  let ci = Math.floor(random(0, 3.999999));
+  selectedColors = append(selectedColors, ci);
+  for (let i = 1; i < 4; i++) {
+    ci = Math.floor(random(0, 3.999999));
+    while (selectedColors.includes(ci)) {
+      ci = Math.floor(random(0, 3.999999));
     }
-    selectedColors = append(selectedColors, index);
+    selectedColors = append(selectedColors, ci);
   }
   let baseColor = selectedCS[selectedColors[0]];
   let pColor = selectedCS[selectedColors[1]];
   let orbitColor = selectedCS[selectedColors[2]];
   let satColor = selectedCS[selectedColors[3]];
   background(baseColor);
+  print(selectedColors[0]);
   
   // Establish the ranked quads
   let rankConst = 1;
