@@ -197,7 +197,7 @@ function getColorSets() {
 }
 
 function setup ( ) {
-  seed = 1000;//int(random() * 999999);
+  seed = 1000;//int($fx.rand() * 999999);
   randomSeed(seed);
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
@@ -521,7 +521,8 @@ function draw ( ) {
   fill(pColor);
   noStroke();
   circle(cp.x, cp.y, pDia);
-
+  
+  fxpreview();
 }
 
 keyTyped = function() {
