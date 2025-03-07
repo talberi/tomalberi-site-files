@@ -101,12 +101,12 @@ function drawPointOnEllipse(centerPoint, w, h, t, d, quadSelect, a) {
 
 // Set curated color pallets
 function getColorSets() {
-  // Go Fast
-  let gfColors = new Array(4);
-  gfColors[0] = color(196, 216, 226); // Blue
-  gfColors[1] = color(255, 102, 0); // Orange
-  gfColors[2] = color(28, 28, 56); // Dark Blue
-  gfColors[3] = color(255); // White
+  // Speed
+  let sColors = new Array(4);
+  sColors[0] = color(196, 216, 226); // Blue
+  sColors[1] = color(255, 102, 0); // Orange
+  sColors[2] = color(28, 28, 56); // Dark Blue
+  sColors[3] = color(255); // White
   
   // Aqua muted
   let amColors = new Array(4);
@@ -124,10 +124,10 @@ function getColorSets() {
   
   // Twilight
   let tlColors = new Array(4);
-  tlColors[0] = color(36, 22, 44); // Dark purple
-  tlColors[1] = color(255, 255, 235); // Yellow
-  tlColors[2] = color(192, 167, 192); // Pink
-  tlColors[3] = color(118, 95, 108); // Gray purple
+  tlColors[0] = color(34, 28, 85); // Dark blue
+  tlColors[1] = color(175, 59, 194); // Purple
+  tlColors[2] = color(255, 165, 225); // Pink
+  tlColors[3] = color(255, 104, 104); // Light red
   
   // Shadow Break
   let sbColors = new Array(4);
@@ -174,8 +174,8 @@ function getColorSets() {
   // Aggregate all color sets
   colorSets = new Array();
   colorSetNames = new Array();
-  colorSets = append(colorSets, gfColors);
-  colorSetNames = append(colorSetNames, "Go Fast");
+  colorSets = append(colorSets, sColors);
+  colorSetNames = append(colorSetNames, "Speed");
   colorSets = append(colorSets, amColors);
   colorSetNames = append(colorSetNames, "Aqua");
   colorSets = append(colorSets, eColors);
