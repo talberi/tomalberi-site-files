@@ -212,7 +212,6 @@ function setup ( ) {
 function draw ( ) {
   randomSeed(seed);
   let quadConfig = Math.floor(random(0, 3.999999));
-  print(quadConfig);
   
   // Choose color set
   selectedCS = colorSets[colorSetIndex];
