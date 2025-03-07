@@ -200,6 +200,10 @@ function setup ( ) {
   randomSeed(seed);
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
+  if (cHeight > windowHeight) {
+	  canvasMin = windowHeight * 34/21;
+	  cHeight = windowHeight;
+  }
   var canvas = createCanvas(canvasMin, cHeight);
   numOrbits = Math.floor(random(1, 5.999999)); // Make minimum number of orbits a parameter between 0 and 4?
   getColorSets();
@@ -565,5 +569,9 @@ function windowResized() {
   // Reset global variable arrays and other values
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
+  if (cHeight > windowHeight) {
+	  canvasMin = windowHeight * 34/21;
+	  cHeight = windowHeight;
+  }
   resizeCanvas(canvasMin, canvasMin*21/34);
 }
