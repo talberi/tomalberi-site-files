@@ -213,6 +213,7 @@ function setup ( ) {
 function draw ( ) {
   randomSeed(seed);
   orientation = Math.floor(random(0, 3.999999));
+  print(orientation);
   
   // Choose color set
   selectedCS = colorSets[colorSetIndex];
