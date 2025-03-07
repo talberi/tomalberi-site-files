@@ -196,7 +196,7 @@ function getColorSets() {
 }
 
 function setup ( ) {
-  seed = int($fx.rand() * 999999);
+  seed = int(random() * 999999);
   randomSeed(seed);
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
