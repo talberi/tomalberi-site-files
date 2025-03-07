@@ -202,7 +202,6 @@ function setup ( ) {
   canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
   var canvas = createCanvas(canvasMin, cHeight);
-  orientation = Math.floor(random(0, 3.999999));
   numOrbits = Math.floor(random(1, 5.999999)); // Make minimum number of orbits a parameter between 0 and 4?
   getColorSets();
   colorSetIndex = Math.floor(random(0, colorSets.length));
@@ -213,6 +212,7 @@ function setup ( ) {
 
 function draw ( ) {
   randomSeed(seed);
+  orientation = Math.floor(random(0, 3.999999));
   
   // Choose color set
   selectedCS = colorSets[colorSetIndex];
