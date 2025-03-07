@@ -48,7 +48,6 @@ var colorSets;
 var colorSetIndex;
 var colorSetNames;
 var cName;
-var orientation;
 
 // Find out if a point is within a quad.
 // Assumes quad is a rectangle
@@ -212,8 +211,8 @@ function setup ( ) {
 
 function draw ( ) {
   randomSeed(seed);
-  orientation = Math.floor(random(0, 3.999999));
-  print(orientation);
+  let quadConfig = Math.floor(random(0, 3.999999));
+  print(quadConfig);
   
   // Choose color set
   selectedCS = colorSets[colorSetIndex];
@@ -247,7 +246,7 @@ function draw ( ) {
   let q1B = new RankedQuad(0, 0, 0, 0, 0);
   
   // Quad 21
-  if (orientation == 0 || orientation == 1) { // Left
+  if (quadConfig == 0 || quadConfig == 1) { // Left
 	  let p0 = new Point(0, 0);
 	  let p1 = new Point(cHeight, 0);
 	  let p2 = new Point(cHeight, cHeight);
@@ -262,19 +261,19 @@ function draw ( ) {
   }
   
   // Quad 13
-  if (orientation == 0) { // Upper right
+  if (quadConfig == 0) { // Upper right
 	  let p0 = new Point(cHeight, 0);
 	  let p1 = new Point(canvasMin, 0);
 	  let p2 = new Point(canvasMin, cHeight*13/21);
 	  let p3 = new Point(cHeight, cHeight*13/21);
 	  q13 = new RankedQuad(p0, p1, p2, p3, rankConst/13);
-  } else if (orientation == 1) { // Lower right
+  } else if (quadConfig == 1) { // Lower right
 	  let p0 = new Point(cHeight, cHeight*8/21);
 	  let p1 = new Point(canvasMin, cHeight*8/21);
 	  let p2 = new Point(canvasMin, cHeight);
 	  let p3 = new Point(cHeight, cHeight);
 	  q13 = new RankedQuad(p0, p1, p2, p3, rankConst/13);
-  } else if (orientation == 2) { // Upper left
+  } else if (quadConfig == 2) { // Upper left
 	  let p0 = new Point(0, 0);
 	  let p1 = new Point(canvasMin*13/34, 0);
 	  let p2 = new Point(canvasMin*13/34, cHeight*13/21);
@@ -289,19 +288,19 @@ function draw ( ) {
   }
   
   // Quad 8
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(canvasMin*26/34, cHeight*13/21);
 	  let p1 = new Point(canvasMin, cHeight*13/21);
 	  let p2 = new Point(canvasMin, cHeight);
 	  let p3 = new Point(canvasMin*26/34, cHeight);
 	  q8 = new RankedQuad(p0, p1, p2, p3, rankConst/8);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(canvasMin*26/34, 0);
 	  let p1 = new Point(canvasMin, 0);
 	  let p2 = new Point(canvasMin, cHeight*8/21);
 	  let p3 = new Point(canvasMin*26/34, cHeight*8/21);
 	  q8 = new RankedQuad(p0, p1, p2, p3, rankConst/8);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(0, cHeight*13/21);
 	  let p1 = new Point(canvasMin*8/34, cHeight*13/21);
 	  let p2 = new Point(canvasMin*8/34, cHeight);
@@ -316,19 +315,19 @@ function draw ( ) {
   }
   
   // Quad 5
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(cHeight, cHeight*16/21);
 	  let p1 = new Point(canvasMin*26/34, cHeight*16/21);
 	  let p2 = new Point(canvasMin*26/34, cHeight);
 	  let p3 = new Point(cHeight, cHeight);
 	  q5 = new RankedQuad(p0, p1, p2, p3, rankConst/5);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(cHeight, 0);
 	  let p1 = new Point(canvasMin*26/34, 0);
 	  let p2 = new Point(canvasMin*26/34, cHeight*5/21);
 	  let p3 = new Point(cHeight, cHeight*5/21);
 	  q5 = new RankedQuad(p0, p1, p2, p3, rankConst/5);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(canvasMin*8/34, cHeight*16/21);
 	  let p1 = new Point(canvasMin*13/34, cHeight*16/21);
 	  let p2 = new Point(canvasMin*13/34, cHeight);
@@ -343,19 +342,19 @@ function draw ( ) {
   }
   
   // Quad 3
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(cHeight, cHeight*13/21);
 	  let p1 = new Point(canvasMin*24/34, cHeight*13/21);
 	  let p2 = new Point(canvasMin*24/34, cHeight*16/21);
 	  let p3 = new Point(cHeight, cHeight*16/21);
 	  q3 = new RankedQuad(p0, p1, p2, p3, rankConst/3);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(cHeight, cHeight*5/21);
 	  let p1 = new Point(canvasMin*24/34, cHeight*5/21);
 	  let p2 = new Point(canvasMin*24/34, cHeight*8/21);
 	  let p3 = new Point(cHeight, cHeight*8/21);
 	  q3 = new RankedQuad(p0, p1, p2, p3, rankConst/3);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(canvasMin*10/34, cHeight*13/21);
 	  let p1 = new Point(canvasMin*13/34, cHeight*13/21);
 	  let p2 = new Point(canvasMin*13/34, cHeight*16/21);
@@ -370,19 +369,19 @@ function draw ( ) {
   }
   
   // Quad 2
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(canvasMin*24/34, cHeight*13/21);
 	  let p1 = new Point(canvasMin*26/34, cHeight*13/21);
 	  let p2 = new Point(canvasMin*26/34, cHeight*15/21);
 	  let p3 = new Point(canvasMin*24/34, cHeight*15/21);
 	  q2 = new RankedQuad(p0, p1, p2, p3, rankConst/2);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(canvasMin*24/34, cHeight*6/21);
 	  let p1 = new Point(canvasMin*26/34, cHeight*6/21);
 	  let p2 = new Point(canvasMin*26/34, cHeight*8/21);
 	  let p3 = new Point(canvasMin*24/34, cHeight*8/21);
 	  q2 = new RankedQuad(p0, p1, p2, p3, rankConst/2);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(canvasMin*8/34, cHeight*13/21);
 	  let p1 = new Point(canvasMin*10/34, cHeight*13/21);
 	  let p2 = new Point(canvasMin*10/34, cHeight*15/21);
@@ -397,19 +396,19 @@ function draw ( ) {
   }
   
   // Quad 1A
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(canvasMin*25/34, cHeight*15/21);
 	  let p1 = new Point(canvasMin*26/34, cHeight*15/21);
 	  let p2 = new Point(canvasMin*26/34, cHeight*16/21);
 	  let p3 = new Point(canvasMin*25/34, cHeight*16/21);
 	  q1A = new RankedQuad(p0, p1, p2, p3, rankConst);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(canvasMin*25/34, cHeight*5/21);
 	  let p1 = new Point(canvasMin*26/34, cHeight*5/21);
 	  let p2 = new Point(canvasMin*26/34, cHeight*6/21);
 	  let p3 = new Point(canvasMin*25/34, cHeight*6/21);
 	  q1A = new RankedQuad(p0, p1, p2, p3, rankConst);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(canvasMin*8/34, cHeight*15/21);
 	  let p1 = new Point(canvasMin*9/34, cHeight*15/21);
 	  let p2 = new Point(canvasMin*9/34, cHeight*16/21);
@@ -424,19 +423,19 @@ function draw ( ) {
   }
   
   // Quad 1B
-  if (orientation == 0) { // Lower right
+  if (quadConfig == 0) { // Lower right
 	  let p0 = new Point(canvasMin*24/34, cHeight*15/21);
 	  let p1 = new Point(canvasMin*25/34, cHeight*15/21);
 	  let p2 = new Point(canvasMin*25/34, cHeight*16/21);
 	  let p3 = new Point(canvasMin*24/34, cHeight*16/21);
 	  q1B = new RankedQuad(p0, p1, p2, p3, rankConst);
-  } else if (orientation == 1) { // Upper right
+  } else if (quadConfig == 1) { // Upper right
 	  let p0 = new Point(canvasMin*24/34, cHeight*5/21);
 	  let p1 = new Point(canvasMin*25/34, cHeight*5/21);
 	  let p2 = new Point(canvasMin*25/34, cHeight*6/21);
 	  let p3 = new Point(canvasMin*24/34, cHeight*6/21);
 	  q1B = new RankedQuad(p0, p1, p2, p3, rankConst);
-  } else if (orientation == 2) { // Lower left
+  } else if (quadConfig == 2) { // Lower left
 	  let p0 = new Point(canvasMin*9/34, cHeight*15/21);
 	  let p1 = new Point(canvasMin*10/34, cHeight*15/21);
 	  let p2 = new Point(canvasMin*10/34, cHeight*16/21);
@@ -522,8 +521,6 @@ function draw ( ) {
   fill(pColor);
   noStroke();
   circle(cp.x, cp.y, pDia);
-  
-  fxpreview();
 }
 
 keyTyped = function() {
