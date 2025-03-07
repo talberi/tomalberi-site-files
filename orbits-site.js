@@ -197,9 +197,9 @@ function getColorSets() {
 }
 
 function setup ( ) {
-  seed = int(random() * 999999);
+  seed = 1000;//int(random() * 999999);
   randomSeed(seed);
-  canvasMin = 1000;
+  canvasMin = windowWidth;
   cHeight = canvasMin*21/34;
   var canvas = createCanvas(canvasMin, cHeight);
   orientation = Math.floor(random(0, 3.999999));
